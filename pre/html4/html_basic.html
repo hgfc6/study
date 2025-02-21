@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>标签头</title>
+    <meta charset="UTF-8"/>
+    <!--在HTML中，<head> 标签用于包含文档的元数据（metadata），即关于HTML文档的信息，而不是文档本身的内容。以下是可以在 <head> 标签内使用的常见标签：
+    <title>: 定义文档的标题，浏览器通常会将标题显示在标签页上。
+    <meta>: 提供文档的元信息，包括字符集（如 <meta charset="UTF-8">）、文档描述、关键词、作者等信息。还可以用于设置视口（viewport）以适应移动设备，例如 <meta name="viewport" content="width=device-width, initial-scale=1.0">。
+    <link>: 用于定义文档与外部资源之间的关系，最常用于连接样式表（CSS文件），例如 <link rel="stylesheet" href="styles.css">。
+    <style>: 用于在文档内部定义CSS样式。
+    <script>: 可以用于在HTML文档中嵌入JavaScript代码。虽然通常将JavaScript文件放在 <body> 标签的底部以提高页面加载速度，但也可以在 <head> 中使用。
+    <base>: 定义页面中所有相对URL的基础URL，即文档中所有相对URL都会相对于这个基础URL来解析。
+    <noscript>: 提供在浏览器禁用JavaScript时的替代内容。
+    请注意，并非所有HTML标签都可以放在 <head> 中，其主要内容应局限于元数据和外部资源的引用。-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="页面描述">
+    <meta name="keywords" content="关键词1, 关键词2">
+    <!-- 社交媒体优化 -->
+    <meta property="og:title" content="分享标题">
+    <style>
+        table {
+            border: 1px solid black;
+            border-collapse: collapse; /* 合并边框 */
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+    <p>段落</p>
+    <h1>标题1</h1>
+    <h2>标题2</h2>
+    <h3>标题3</h3>
+
+    <a href="https://www.runoob.com/html/html-basic.html">超链接</a><br>
+    <a href="https://www.runoob.com/html/html-attributes.html">html属性</a><br>
+    <!-- <a> 标签（锚标签）用于创建超链接，指向另一个网页、文件、位置或同一页面中的其他元素。以下是一些常见的 <a> 标签的属性：
+
+    href：规定链接的目标 URL。
+    target：规定在何处打开链接文档。常见值包括：
+    _self：在当前窗口或标签页中打开链接。（默认）
+    _blank：在新窗口或标签页中打开链接。
+    _parent：在父框架中打开链接。
+    _top：在整个窗口中打开链接。
+    rel：规定当前文档与链接文档之间的关系。常见值包括 noopener、noreferrer、nofollow 等。
+    download：提示浏览器下载目标 URL 而不是导航到它，也可以指定下载文件的名称。
+    hreflang：规定链接文档的语言。
+    title：提供关于链接的额外信息，通常作为工具提示显示。
+    name：在旧版 HTML 中用于创建锚点，但已被 id 属性取代，用于 JavaScript 和 CSS。
+    请注意，HTML5 引入了一些新的属性，并且不再推荐使用某些旧的属性。建议根据最新的 HTML 标准来使用这些属性。 -->
+
+    <img src="../../pictures/专业团队.jpg" width="20%" alt="专业团队">
+    <!--HTML中的<img>标签用于插入图像，它有许多属性可以用来定义图像的各种特性。以下是一些常用的<img>标签属性：
+
+    src - 规定图像的URL路径。
+    alt - 规定图像的替代文本，当图像无法显示时会显示这段文本，也可以用于屏幕阅读器，提高可访问性。
+    width - 规定图像的宽度，单位可以是像素（px）或其他相对值。
+    height - 规定图像的高度，单位可以是像素（px）或其他相对值。
+    title - 规定图像的标题，当鼠标悬停在图像上时会显示。
+    border - 规定图像的边框宽度，通常现在推荐使用CSS来设置边框。
+    align - 规定图像相对于周围元素的对齐方式，不推荐使用，建议使用CSS进行布局。
+    usemap - 规定图像作为客户端图像映射的一部分，与<map>标签一起使用。
+    ismap - 将图像定义为服务器端图像映射的一部分。
+    longdesc - 提供一个URL，指向包含图像长描述的文档。
+    loading - 规定图像何时加载，可以设置为lazy（延迟加载）或eager（立即加载）。
+    crossorigin - 规定图像的CORS属性，用于控制图像的跨域请求。
+    referrerpolicy - 规定在获取图像时要使用的引用策略。-->
+
+    <ul>
+        <li>无序列表</li>
+        <li>无序列表</li>
+    </ul>
+    <ol>
+        <li>有序列表</li>
+        <li>有序列表</li>
+    </ol>
+
+    <table>
+        <thead>
+        <tr>
+            <th>1</th>
+            <th>2</th>
+            <th colspan="2">3</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td rowspan="2">1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <br>
+    <hr>
+    <form action="/submit" METHOD="POST" style="border: 1px solid black;">
+        <label for="name">用户名 </label>
+        <input type="text" id="name" name="name" placeholder="请输入用户名" required><br/>
+        <label for="passwd">密码 </label>
+        <input type="password" id="passwd" name="password" placeholder="请输入密码" required><br/>
+
+        <!--单选-->
+        <label>性别</label>
+        <input type="radio" id="male" name="render" value="male" checked/>
+        <label for="male">男</label>
+        <input type="radio" id="female" name="render" value="female"/>
+        <label for="female">女</label>
+        <input type="radio" id="unknow" name="render" value="unknow"/>
+        <label for="unknow">保密</label>
+        <br/>
+
+        <!--复选框-->
+        <input type="checkbox" id="subscribe1" name="subscribe[]" value="1" checked/>
+        <label for="subscribe1">订阅消息1</label>
+        <input type="checkbox" id="subscribe2" name="subscribe[]" value="2"/>
+        <label for="subscribe2">订阅消息2</label>
+        <input type="checkbox" id="subscribe3" name="subscribe[]" value="3" checked/>
+        <label for="subscribe3">订阅消息3</label>
+        <br/>
+
+        <!--下拉列表-->
+        <label for="country">国家</label><br/>
+        <select id="country" name="country">
+            <option value="zh">中国</option>
+            <option value="us">美国</option>
+            <option value="other">其他</option>
+        </select>
+
+        <br/>
+        <label>
+            <textarea id="comment" name="comment" rows="4" cols="6" placeholder="请输入评论"></textarea>
+        </label>
+
+        <br/>
+        <input type="submit" value="提交"/><br/>
+        <button type="submit">提交</button>
+    </form>
+    <hr/>
+    <h1>选学内容</h1>
+    <h2>框架</h2>
+    <iframe src="https://www.runoob.com/html/html-tutorial.html" width="50%" height="500px"></iframe>
+    <br/><br/>
+
+    <h2>Canvas</h2>
+
+    <canvas id="myCanvas" width="200" height="100"></canvas>
+    <script>
+        const canvas = document.getElementById("myCanvas");
+        const ctx = canvas.getContext("2d");
+        ctx.fillStyle = "red";
+        ctx.fillRect(10, 10, 50, 50);
+    </script>
+</body>
+</html>
