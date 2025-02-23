@@ -1,0 +1,93 @@
+/* 选择器与优先级 */
+/* 标签选择器 */
+p {
+    color: red;
+    font-size: xxx-large;
+    margin: 10px;
+}
+
+/* 类选择器 */
+.button {
+    padding: 8px 16px;
+}
+
+/* ID 选择器（慎用，优先级过高） */
+#header {
+    background: #fff4a6;
+}
+
+/* 通配符选择器 */
+* {
+    margin: 2px;
+    padding: 0;
+}
+
+/* 后代选择器 意思是选择所有在 nav 元素内部的 ul 元素之后的 li 元素*/
+nav ul li {
+    color: green;
+}
+
+/* 子代选择器 用以选择所有直接位于.parent元素之下的.child元素*/
+.parent > .child {
+    border: 1px solid #ccc;
+}
+
+/* 相邻兄弟选择器 表示选择紧接在 h2 元素之后的 p 元素*/
+h2 + p {
+    margin-top: 10px;
+}
+
+/* 并集选择器 选择器选择了所有的<h1>、<h2>和<h3>标签*/
+h1, h2, h3 {
+    font-family: Arial, emoji;
+}
+
+/*伪类和伪元素*/
+/* 链接状态 */
+a:hover { color: red; }
+a:active { color: blue; }
+
+/* 表单元素 */
+input:focus { outline: 2px solid #4CAF50; }
+
+/* 首行与首字母 */
+p::first-line { font-weight: bold; }
+p::first-letter { font-size: 2em; }
+
+/* 优先级权重：行内样式(1000) > ID(100) > 类/伪类(10) > 标签(1) */
+#nav .item.active { color: red; } /* 权重：100 + 10 + 10 = 120 */
+
+/* 盒子模型与布局 */
+/* 盒模型组成 */
+.box {
+    width: 500px;          /* 内容宽度 */
+    padding: 20px;         /* 内边距 */
+    border: 2px solid #000;/* 边框 */
+    margin: 50px;          /* 外边距 */
+    box-sizing: border-box;/* 切换为 border-box 模型（总宽度=width） */
+}
+/* 居中布局 */
+/* Flex 水平垂直居中 */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+}
+
+/* Grid 居中 */
+.container {
+    display: grid;
+    place-items: center;
+}
+
+/* 绝对定位居中 */
+.parent {
+    position: relative;
+}
+.child {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
