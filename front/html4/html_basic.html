@@ -52,7 +52,9 @@
     name：在旧版 HTML 中用于创建锚点，但已被 id 属性取代，用于 JavaScript 和 CSS。
     请注意，HTML5 引入了一些新的属性，并且不再推荐使用某些旧的属性。建议根据最新的 HTML 标准来使用这些属性。 -->
 
-    <img src="../../pictures/专业团队.jpg" width="20%" alt="专业团队">
+    <a href="https://www.runoob.com/html/html-images.html" target="_blank">
+        <img src="../../pictures/专业团队.jpg" width="30%" alt="专业团队">
+    </a>
     <!--HTML中的<img>标签用于插入图像，它有许多属性可以用来定义图像的各种特性。以下是一些常用的<img>标签属性：
 
     src - 规定图像的URL路径。
@@ -103,11 +105,50 @@
 
     <br>
     <hr>
-    <form action="/submit" METHOD="POST" style="border: 1px solid black;">
+    <!--
+    <form> 标签用于创建一个表单以收集用户输入。它有许多属性可以用来定义表单的行为和外观。以下是一些常见的 <form> 标签属性：
+    action：指定表单数据提交的目标URL，即表单数据提交到的服务器端脚本。
+    method：指定表单数据提交时使用的HTTP方法，常用的方法有 GET 和 POST。
+    name：指定表单的名称，用于在脚本中引用表单。
+    enctype：指定表单数据在提交时的编码类型。常用值有 application/x-www-form-urlencoded 和 multipart/form-data。
+    accept-charset：指定服务器期望接收的字符编码。
+    autocomplete：控制浏览器是否自动完成表单输入。可取值为 on 或 off。
+    novalidate：布尔属性，指定提交表单时不进行验证。
+    target：指定提交表单后响应的目标窗口或框架。常用值有 _self、_blank、_parent 和 _top。
+    rel：当 target 属性使用 _blank 时，指定目标文档与当前文档的关系。可取值包括 noopener、noreferrer 等。
+    id：定义表单的唯一标识符，用于JavaScript操作。
+    class：定义表单的CSS类，用于样式设置。
+    style：定义表单的内联样式
+    -->
+    <form action="/submit" METHOD="POST" style="border: 1px solid black;" >
         <label for="name">用户名 </label>
-        <input type="text" id="name" name="name" placeholder="请输入用户名" required><br/>
+        <input type="text" id="name" name="name" placeholder="请输入用户名" required/><br/>
         <label for="passwd">密码 </label>
-        <input type="password" id="passwd" name="password" placeholder="请输入密码" required><br/>
+        <input type="password" id="passwd" name="password" placeholder="请输入密码" required/><br/>
+        <label for="jin">禁用 </label>
+        <input type="text" id="jin" name="jin" placeholder="禁止输入" disabled/><br/>
+        <!--
+        <input> 标签在 HTML 中用于创建多种类型的输入控件，它支持多种属性。以下是一些常用的 <input> 标签属性：
+        type：指定输入字段的类型。常见的类型包括 text、password、checkbox、radio、submit、reset、button、file、date、email、number、url 等。
+        name：定义输入字段的名称，用于提交表单数据时的键名。
+        value：定义输入字段的值，对于某些类型（如 radio 或 checkbox），这是提交给服务器的数据。
+        id：为输入字段指定一个唯一的标识符，通常用于与 <label> 标签关联。
+        class：为输入字段指定一个或多个类名，用于 CSS 样式或 JavaScript 脚本操作。
+        placeholder：提供一个简短的提示，描述输入字段的预期值。当输入字段为空时，提示信息会显示在其中。
+        checked：用于复选框或单选按钮，表示该控件在页面加载时是否被选中。
+        disabled：禁用输入字段，使其无法被用户修改或提交。
+        required：指定输入字段为必填项，用户在提交表单前必须填写。
+        maxlength：限制用户输入的最大字符数。
+        minlength：指定用户输入的最小字符数。
+        readonly：使输入字段变为只读状态，用户可以查看其内容但不能修改。
+        min 和 max：用于 number 类型的输入字段，规定用户输入的最小值和最大值。
+        step：用于 number 类型的输入字段，规定合法的数字间隔。
+        pattern：定义一个正则表达式，用于验证输入字段的值是否符合特定的模式。
+        autofocus：页面加载时自动聚焦到该输入字段。
+        autocomplete：控制浏览器是否自动完成输入字段的值。
+        list：与 <datalist> 元素配合使用，为输入字段提供预定义选项。
+        这些属性可以根据具体需求来组合使用，以创建功能丰富的表单控件。
+        -->
 
         <!--单选-->
         <label>性别</label>
@@ -134,24 +175,53 @@
             <option value="zh">中国</option>
             <option value="us">美国</option>
             <option value="other">其他</option>
-        </select>
+        </select><br/>
 
+        <!--输入域选项-->
+        <label>
+            <input list="browsers" name="browser" placeholder="浏览器"/>
+        </label>
+        <datalist id="browsers">
+            <option value="Internet Explorer">
+            <option value="Firefox">
+            <option value="Chrome">
+            <option value="Opera">
+            <option value="Safari">
+        </datalist>
         <br/>
         <label>
-            <textarea id="comment" name="comment" rows="4" cols="6" placeholder="请输入评论"></textarea>
+            <textarea id="comment" name="comment" rows="4" cols="36" placeholder="请输入评论"></textarea>
         </label>
 
         <br/>
-        <input type="submit" value="提交"/><br/>
+        <input type="submit" value="提交"/><input type="reset"/><br/>
         <button type="submit">提交</button>
     </form>
     <hr/>
     <h1>选学内容</h1>
-    <h2>框架</h2>
+    <a href="https://www.runoob.com/html/html-iframes.html">
+        <h2>框架</h2>
+    </a>
     <iframe src="https://www.runoob.com/html/html-tutorial.html" width="50%" height="500px"></iframe>
     <br/><br/>
 
-    <h2>Canvas</h2>
+    <h2>多媒体嵌入</h2>
+    <a href="https://www.runoob.com/html/html5-form-elements.html">
+        <h3>音频</h3>
+    </a>
+    <audio controls>
+        <source src="audio.mp3" type="audio/mpeg">
+    </audio><br/>
+    <a href="https://www.runoob.com/html/html5-video.html">
+        <h3>视频</h3>
+    </a>
+    <video width="320" controls>
+        <source src="video.mp4" type="video/mp4">
+    </video>
+
+    <a href="https://www.runoob.com/html/html5-canvas.html">
+        <h2>Canvas</h2>
+    </a>
 
     <canvas id="myCanvas" width="200" height="100"></canvas>
     <script>
@@ -160,5 +230,19 @@
         ctx.fillStyle = "red";
         ctx.fillRect(10, 10, 50, 50);
     </script>
+    <a href="https://www.runoob.com/html/html5-semantic-elements.html">
+        <h2>语义化标签</h2>
+    </a>
+    <header>页眉</header>
+    <nav>导航栏</nav>
+    <main>
+        <article>
+            <section>内容区块1</section>
+            <section>内容区块2</section>
+        </article>
+        <aside>侧边栏</aside>
+    </main>
+    <footer>页脚</footer>
+
 </body>
 </html>
