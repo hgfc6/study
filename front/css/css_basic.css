@@ -91,3 +91,29 @@ p::first-letter { font-size: 2em; }
     top: 50%;
     transform: translate(-50%, -50%);
 }
+
+/*Flex弹性布局*/
+.flex-container {
+    display: flex;
+    gap: 10px;            /* 子项间距 */
+    flex-wrap: wrap;       /* 允许换行 */
+    border: #4CAF50 1px solid;
+}
+.item {
+    flex: 1;              /* 自适应填充 */
+    min-width: 200px;     /* 最小宽度 */
+}
+
+/*Grid网格布局*/
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 三列均分 */
+    grid-template-rows: 100px 200px; /* 两行，第一行100px，第二行200px */
+    gap: 10px; /* 项目间距 */
+}
+.item1 { background-color: lightblue; }
+.item2 { background-color: lightgreen; }
+.item3 { background-color: lightcoral; }
+.item4 { background-color: lightyellow; }
+.item5 { background-color: lightpink; }
+.item6 { background-color: lightgray; }
