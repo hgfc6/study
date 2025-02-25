@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>异步编程</title>
+</head>
+<body>
+<div>
+    在JavaScript中，异步编程是一种允许程序在等待某个操作（例如网络请求、文件读取等）完成时继续执行其他任务的编程方式。JavaScript中实现异步编程的主要方式包括：<br><br>
+
+    1:回调函数：这是最早的异步编程方式。你将一个函数作为参数传递给另一个函数，当异步操作完成时，被传递的函数会被调用。<br>
+    2:Promise：Promise是ES6引入的一种更现代的方式，用于处理异步操作的结果。它代表一个尚未完成但预计将来会完成的操作。<br>
+    3:async/await：这是基于Promise的更简洁的语法糖，使得异步代码看起来更像同步代码，便于理解和维护。
+</div>
+
+<button id="loadDataButton">加载数据</button>
+<div id="dataContainer" class="container"></div>
+<div id="dataContainerPromise" class="container"></div>
+<div id="dataContainerAsync" class="container"></div>
+
+<script>
+    document.getElementById('loadDataButton').addEventListener('click', function() {
+        for (let con of document.getElementsByClassName("container")) {
+            con.innerText = ""
+        }
+        loadData(function(data) {
+            document.getElementById('dataContainer').innerText = data;
+        });
+        loadDataByPromise()
+            .then(data => document.getElementById('dataContainerPromise').innerText = data)
+            .catch(error => console.error(error));
+    });
+
+    document.getElementById("loadDataButton").addEventListener("click", async function() {
+        try {
+            let data = await loadDataAsync();
+            document.getElementById("dataContainerAsync").innerText = data
+        } catch (e) {
+            console.log(e)
+        }
+    })
+
+    function loadData(callback) {
+        setTimeout(function() {
+            callback('这是异步加载的数据');
+        }, 1000);
+    }
+    //使用Promise
+    function loadDataByPromise() {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve('这是Promise异步加载的数据');
+            }, 2000);
+        });
+    }
+
+    //Async await
+    async function loadDataAsync() {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve('这是Async异步加载的数据');
+            }, 3000);
+        });
+    }
+</script>
+
+</body>
+</html>

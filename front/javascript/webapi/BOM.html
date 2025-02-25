@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Web API BOM</title>
+</head>
+<body>
+<p>JavaScript 的 BOM（Browser Object Model，浏览器对象模型）提供了与浏览器窗口进行交互的对象。BOM 的核心是 window 对象，它代表浏览器窗口，并且是 JavaScript 中的全局对象。以下是 BOM 的主要对象及其功能：</p>
+
+<h2>1. window 对象</h2>
+<b>window 对象是 BOM 的核心，表示浏览器窗口。</b><br>
+它是全局对象，所有全局变量和函数都是 window 对象的属性和方法。<br><br>
+常用属性和方法：<br>
+window.innerWidth 和 window.innerHeight：获取浏览器窗口的内部宽度和高度。<br>
+window.alert()：显示警告框。<br>
+window.confirm()：显示确认框。<br>
+window.prompt()：显示提示框，要求用户输入。<br>
+window.open() 和 window.close()：打开和关闭浏览器窗口。<br>
+window.setTimeout() 和 window.setInterval()：设置定时器和间隔器。<br>
+<h2>2. navigator 对象</h2>
+<b>navigator 对象提供了关于浏览器的信息。</b><br>
+常用属性：<br>
+navigator.userAgent：返回用户代理字符串，包含浏览器和操作系统的信息。<br>
+navigator.platform：返回操作系统平台。<br>
+navigator.language：返回浏览器的语言设置。<br>
+<h2>3. location 对象</h2>
+<b>location 对象提供了当前页面的 URL 信息，并且可以用于重定向页面。</b><br>
+常用属性和方法：<br>
+location.href：获取或设置当前页面的完整 URL。<br>
+location.hostname：获取当前页面的主机名。<br>
+location.pathname：获取当前页面的路径部分。<br>
+location.search：获取当前页面的查询字符串部分。<br>
+location.reload()：重新加载当前页面。<br>
+location.replace()：用新的 URL 替换当前页面。<br>
+<h2>4. history 对象</h2>
+<b>history 对象提供了浏览器历史记录的操作功能。</b><br>
+常用方法：<br>
+history.back()：返回到上一个页面。<br>
+history.forward()：前进到下一个页面。<br>
+history.go(n)：前进或后退 n 个页面。<br>
+<h2>5. screen 对象</h2>
+<b>screen 对象提供了用户屏幕的信息。</b><br>
+常用属性：<br>
+screen.width 和 screen.height：获取屏幕的宽度和高度。<br>
+screen.availWidth 和 screen.availHeight：获取屏幕的可用宽度和高度（不包括任务栏等）。<br>
+<h2>6. document 对象</h2>
+虽然 document 对象通常被认为是 DOM 的一部分，但它也是 BOM 的一部分。<br>
+document 对象表示当前加载的网页，提供了访问和操作网页内容的方法。<br>
+</body>
+</html>
