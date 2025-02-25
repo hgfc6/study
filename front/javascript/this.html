@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>This</title>
+</head>
+<body>
+
+<div id = "thisapp">
+    全局上下文：this 指向全局对象（非严格模式）或 undefined（严格模式）。<br>
+    方法调用：this 指向调用该方法的对象。<br>
+    构造函数调用：this 指向新创建的实例对象。<br>
+    箭头函数：this 指向定义时所在上下文的 this 值。<br>
+    call 和 apply：显式指定 this 的值，并立即调用函数。<br>
+    bind：显式指定 this 的值，并返回一个新的函数。
+</div>
+<script>
+    /*全局上下文：
+        在全局执行环境中（即在任何函数之外），this 指向全局对象。在浏览器中，全局对象是 window。
+        // 输出: window*/
+    console.log(this)
+    /*函数调用：
+        在普通函数调用中，this 默认指向全局对象（在严格模式下为 undefined）。
+        // 输出: window (非严格模式) 或 undefined (严格模式)*/
+    function showThis() {
+        console.log(this);
+    }
+    showThis();
+    /*方法调用：
+        当函数作为对象的方法被调用时，this 指向调用该方法的对象。
+        // 输出: { name: '对象', showThis: [Function: showThis] }*/
+    const obj = {
+        name: '对象',
+        showThis: function() {
+            console.log(this);
+        }
+    };
+    obj.showThis();
+    /*构造函数调用：
+
+        当使用 new 关键字调用构造函数时，this 指向新创建的实例对象。
+        // 输出: 张三*/
+    function Person(name) {
+        this.name = name;
+    }
+    const person = new Person('张三');
+    console.log(person.name);
+    /*箭头函数：
+
+        箭头函数没有自己的 this 绑定，它会捕获其所在上下文的 this 值。
+        // 输出: { name: '对象', showThis: [Function: showThis] }*/
+    const obj2 = {
+        name: '对象',
+        showThis: function() {
+            const innerFunction = () => {
+                console.log(this);
+            };
+            innerFunction();
+        }
+    };
+    obj2.showThis();
+</script>
+
+
+<script>
+    /*call、apply 和 bind 方法：这些方法可以显式地设置函数执行时的 this 值。*/
+
+    /*call 方法允许你调用一个函数，并显式地指定 this 的值。
+    * 语法：function.call(thisArg, arg1, arg2, ...)
+            thisArg：你希望 this 指向的对象。
+            arg1, arg2, ...：传递给函数的参数。*/
+    function greet2() {
+        console.log(`Hello, ${this.name}!`);
+    }
+    const person2 = { name: '张三' };
+    greet2.call(person2); // 输出: Hello, 张三!
+
+    /*apply 方法与 call 方法类似，也是用来调用一个函数，并显式地指定 this 的值。
+        不同之处在于 apply 方法接受一个参数数组，而不是参数列表。*/
+    function greet3(greeting, punctuation) {
+        console.log(`${greeting}, ${this.name}${punctuation}`);
+    }
+    const person3 = { name: '张三' };
+    greet3.apply(person3, ['Hello', '!']); // 输出: Hello, 张三!
+
+
+    /*bind 方法创建一个新的函数，并永久性地绑定 this 的值。
+    语法：function.bind(thisArg, arg1, arg2, ...)
+            thisArg：你希望 this 指向的对象。
+            arg1, arg2, ...：传递给函数的参数。*/
+    function greet4() {
+        console.log(`Hello, ${this.name}!`);
+    }
+
+    const person4 = { name: '张三' };
+    const greetPerson = greet4.bind(person4);
+    greetPerson(); // 输出: Hello, 张三!
+
+</script>
+</body>
+</html>

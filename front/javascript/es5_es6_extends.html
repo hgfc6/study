@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>继承</title>
+</head>
+<body>
+<div>
+    在ES5中，继承是通过原型链来实现的。通常的做法是使用构造函数和prototype属性来创建一个“类”，然后通过Object.create或者直接修改prototype来实现继承。<br>
+    可以参考prototype_chain.html<br>
+    ES6引入了class语法，使得继承更加直观和易于理解。ES6的继承是通过extends关键字来实现的。<br><br>
+
+    ES5 使用构造函数和原型链来实现继承，语法较为复杂。<br>
+    ES6 通过class和extends关键字提供了一种更简洁、更直观的方式来实现继承，使得代码更易读和维护。
+</div>
+<script>
+    // 定义父类
+    class Animal {
+        constructor(name) {
+            this.name = name;
+        }
+
+        speak() {
+            console.log(`${this.name} makes a noise.`);
+        }
+    }
+
+    // 定义子类
+    class Dog extends Animal {
+        constructor(name, breed) {
+            super(name); // 调用父类的构造函数
+            this.breed = breed;
+        }
+
+        speak() {
+            console.log(`${this.name} barks.`);
+        }
+    }
+
+    // 使用
+    const d = new Dog('Rex', 'Labrador');
+    d.speak(); // Rex barks.
+
+</script>
+</body>
+</html>

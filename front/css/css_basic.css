@@ -97,7 +97,7 @@ p::first-letter { font-size: 2em; }
     display: flex;
     gap: 10px;            /* 子项间距 */
     flex-wrap: wrap;       /* 允许换行 */
-    border: #4CAF50 1px solid;
+    border: #4CAF50 3px solid;
 }
 .item {
     flex: 1;              /* 自适应填充 */

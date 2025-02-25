@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>原型链</title>
+</head>
+<body>
+<div>
+    在 JavaScript 中，原型链（prototype chain）是一种机制，用于实现继承。<br>
+    每个对象在创建时都会与一个原型对象关联，这个原型对象也有自己的原型，这样就形成了一个链式的结构，称为原型链。<br>
+    当你尝试访问一个对象的属性或方法时，如果对象本身没有这个属性或方法，JavaScript 引擎会沿着原型链向上查找，直到找到该属性或方法，或者到达原型链的末端（通常是 null）。
+</div>
+
+<script>
+    // 定义一个构造函数
+    function Animal(name) {
+        this.name = name;
+    }
+
+    // 在 Animal 的原型上添加一个方法
+    Animal.prototype.speak = function() {
+        console.log(this.name + ' makes a noise.');
+    };
+
+    // 创建一个继承自 Animal 的构造函数
+    function Dog(name, breed) {
+        Animal.call(this, name); // 继承父类的属性
+        this.breed = breed;
+    }
+
+    // 设置 Dog 的原型为 Animal 的实例，从而继承 Animal 的方法
+    Dog.prototype = Object.create(Animal.prototype);
+    Dog.prototype.constructor = Dog;
+
+    // 在 Dog 的原型上添加一个方法
+    Dog.prototype.speak = function() {
+        console.log(this.name + ' barks. it\'s a ' + this.breed);
+    };
+
+    // 创建一个 Dog 的实例
+    let dog = new Dog('Rex', 'Labrador');
+
+    // 调用 speak 方法
+    dog.speak(); // 输出: Rex barks.
+</script>
+</body>
+</html>
