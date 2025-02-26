@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>网络请求</title>
+</head>
+<body>
+<div>
+    网络请求通常用于从服务器获取数据或向服务器发送数据。常见的网络请求方式包括使用 XMLHttpRequest 对象、Fetch API 以及第三方库如
+    Axios。<br>
+
+    <label for="XMLHttpRequest"><h2>XMLHttpRequest</h2></label>
+    <button id="XMLHttpRequest" onclick="xml_http_request()">XMLHttpRequest</button>
+
+    <br>
+    <br>
+    Fetch API 是现代浏览器中用于发送网络请求的接口，它基于 Promise，使用起来更加简洁和直观。
+    <label for="fetch_api"><h2>Fetch API</h2></label>
+    <button id="fetch_api" onclick="fetch_request()">Fetch</button>
+
+    <br>
+    <br>
+    Axios 是一个基于 Promise 的HTTP客户端，可以在浏览器和Node.js中使用。它提供了更简洁的API和更强大的功能。
+    <label for="axios_api"><h2>Axios</h2></label>
+    <button id="axios_api" onclick="axios_request()">Axios</button>
+
+    <br>
+    <br>
+    <br>
+    <div>
+        <b>
+            总结
+            <ul>
+                <li>XMLHttpRequest 是早期的网络请求方式，功能强大但使用起来较为复杂。</li>
+                <li>Fetch API 是现代浏览器中的标准方式，基于 Promise，使用简洁。</li>
+                <li>Axios 是一个功能强大的第三方库，提供了更简洁的API和更丰富的功能。</li>
+            </ul>
+        </b>
+    </div>
+
+    <script>
+        function xml_http_request() {
+            // 创建一个新的XMLHttpRequest对象
+            var xhr = new XMLHttpRequest();
+
+            // 配置请求类型、URL以及是否异步
+            xhr.open('GET', 'https://www.bing.com/search?q=cjh', true);
+
+            // 设置请求完成时的回调函数
+            xhr.onload = function () {
+                if (xhr.status >= 200 && xhr.status < 300) {
+                    // 请求成功，处理响应数据
+                    console.log(JSON.parse(xhr.responseText));
+                } else {
+                    // 请求失败，处理错误
+                    console.error('请求失败:', xhr.statusText);
+                }
+            };
+
+            // 设置请求错误时的回调函数
+            xhr.onerror = function () {
+                console.error('请求出错');
+            };
+
+            // 发送请求
+            xhr.send();
+
+        }
+
+        function fetch_request() {
+            // 发送GET请求
+            fetch('https://www.bing.com/search?q=cjh')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('请求失败: ' + response.statusText);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    console.log(data);
+                })
+                .catch(error => {
+                    console.error('请求出错:', error);
+                });
+
+            // 发送POST请求
+            fetch('https://www.bing.com/search', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    title: 'foo',
+                    body: 'bar',
+                    userId: 1
+                })
+            })
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data);
+                })
+                .catch(error => {
+                    console.error('请求出错:', error);
+                });
+        }
+
+        // 首先，你需要安装 Axios：
+        // npm install axios
+        function axios_request() {
+            // 引入Axios
+            const axios = require('axios');
+
+            // 发送GET请求
+            axios.get('https://www.bing.com/search?q=cjh')
+                .then(response => {
+                    console.log(response.data);
+                })
+                .catch(error => {
+                    console.error('请求出错:', error);
+                });
+
+            // 发送POST请求
+            axios.post('https://www.bing.com/search', {
+                title: 'foo',
+                body: 'bar',
+                userId: 1
+            })
+                .then(response => {
+                    console.log(response.data);
+                })
+                .catch(error => {
+                    console.error('请求出错:', error);
+                });
+        }
+    </script>
+
+    <br>
+    <br>
+    <br>
+
+    <div>
+        <h2>WebSocket 的基本概念</h2>
+        <ul>
+            <li><b>握手过程：</b>WebSocket 连接通过 HTTP 协议开始，客户端发送一个特殊的 HTTP 请求，服务器响应后，连接升级为
+                WebSocket 协议。
+            </li>
+            <li><b>双向通信：</b>一旦连接建立，客户端和服务器可以随时发送数据。</li>
+            <li><b>持久连接：</b>WebSocket 连接是持久的，不像 HTTP 请求那样每次都需要重新建立连接。</li>
+            <li><b>低延迟：</b>由于连接是持久的，数据传输的延迟较低，适合实时应用。</li>
+        </ul>
+        <div>WebSocket 是一种强大的协议，适用于需要实时双向通信的应用场景，如在线聊天、实时游戏、股票行情等。
+            通过 WebSocket，客户端和服务器可以保持持久的连接，随时发送和接收数据，从而实现低延迟的实时通信。
+        </div>
+        <button id="websocket" onclick="webc()">WebSocket</button>
+    </div>
+    <script>
+        function webc() {
+            // 创建 WebSocket 连接
+            const socket = new WebSocket('ws://www.bing.com/search?q=cjh');
+
+            // 连接成功时触发
+            socket.onopen = function (event) {
+                console.log('WebSocket connection established.');
+                // 向服务器发送消息
+                socket.send('Hello Server!');
+            };
+
+            // 接收到服务器消息时触发
+            socket.onmessage = function (event) {
+                console.log('Message from server:', event.data);
+            };
+
+            // 连接关闭时触发
+            socket.onclose = function (event) {
+                console.log('WebSocket connection closed.');
+            };
+
+            // 发生错误时触发
+            socket.onerror = function (error) {
+                console.error('WebSocket error:', error);
+            };
+
+            // 发送消息
+            function sendMessage(message) {
+                if (socket.readyState === WebSocket.OPEN) {
+                    socket.send(message);
+                } else {
+                    console.error('WebSocket is not open.');
+                }
+            }
+
+            // 关闭连接
+            function closeConnection() {
+                socket.close();
+            }
+        }
+    </script>
+</div>
+</body>
+</html>
