@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue 测试</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+<body>
+<div id="app">
+    {{ msg }}
+</div>
+<script>
+    // 创建一个Vue实例
+    var app = new Vue({
+        el: '#app',
+        data: {
+            msg: "Hello Vue!"
+        }
+    });
+</script>
+
+<div id="app2">
+    <my-component></my-component>
+</div>
+<script>
+    //使用组件
+    Vue.component('my-component', {
+        template: '<div>A vue component</div>'
+    })
+    new Vue({
+        el: '#app2'
+    })
+</script>
+
+<div id="app3">
+    <p v-if="seen">Now you see me</p>
+    <button v-on:click="toggle">Toggle</button>
+</div>
+<script>
+    //使用指令
+    var app = new Vue({
+        el: '#app3',
+        data: {
+            seen: true
+        },
+        methods: {
+            toggle: function () {
+                this.seen = !this.seen
+            }
+        }
+    });
+</script>
+</body>
+</html>
