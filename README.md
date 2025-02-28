@@ -8,3 +8,4 @@
 ### [CSS](./front/css/css.md)
 ### [JavaScript](./front/javascript/javascript.md)
 ### [Vue](./front/vue/Vue.md)
+### [Python](./python/python.md)
