@@ -2,6 +2,7 @@
 # 元组 tuple与列表类似，但是tuple一旦初始化就不能修改。
 
 def test_tuple():
+    print('------------------------------------')
     # 创建一个空元组
     my_tuple = ()
     # 创建一个非空元组
@@ -29,6 +30,42 @@ def test_tuple():
     # del my_tuple2[1]
     # print(my_tuple2)  # 输出TypeError: 'tuple' object doesn't support item deletion
 
+# 切片
+def test_slice():
+    print('------------------------------------')
+    # 切片操作
+    # 集合list
+    # 语法：list[start:end:step]
+    # start：起始索引，默认为0
+    # end：结束索引，默认为列表长度
+    # step：步长，默认为1
+    # 负数索引：-1表示最后一个元素，-2表示倒数第二个元素，以此类推
+    # 步长为负：表示逆序切片
+    # 省略start：表示从头开始
+    # 省略end：表示到末尾结束
+    # 省略step：表示步长为1
+    # 空切片：[:]表示复制整个列表
+    # 复制列表：list[:]
+    # 字符串切片：字符串[start:end:step]
+    # 元组切片：元组[start:end:step]
+
+    my_list4 = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    print(my_list4[::2])  # 输出[1, 3, 5, 7, 9]
+    print(my_list4[::-1])  # 输出[9, 8, 7, 6, 5, 4, 3, 2, 1]
+    print(my_list4[1:7:2])  # 输出[2, 4, 6]
+    print(my_list4[1:-1:2])  # 输出[2, 4, 6, 8]
+
+    my_tuple4 = (1, 2, 3, 4, 5, 6, 7, 8, 9)
+    print(my_tuple4[::2])  # 输出(1, 3, 5, 7, 9)
+    print(my_tuple4[::-1])  # 输出(9, 8, 7, 6, 5, 4, 3, 2, 1)
+    print(my_tuple4[1:7:2])  # 输出(2, 4, 6)
+    print(my_tuple4[1:-1:2])  # 输出(2, 4, 6, 8)
+
+    my_str4 = '123456789'
+    print(my_str4[::2])  # 输出'13579'
+    print(my_str4[::-1])  # 输出'987654321'
+    print(my_str4[1:7:2])  # 输出'246'
+    print(my_str4[1:-1:2])  # 输出'2468'
 if __name__ =='__main__':
     # 创建一个空列表
     my_list = []
@@ -63,7 +100,7 @@ if __name__ =='__main__':
     print(my_list.count(3))  # 输出1
     # 2.index(x)：返回列表中第一次出现元素x的索引
     print(my_list.index(3))  # 输出1
-    # 3.insert(i, x)：在索引i处插入元素x
+    # 3.insert(i, x)：在索引i处插入元素x，其他元素后移
     my_list.insert(1, 5)
     print(my_list)  # 输出[4, 5, 3]
     # 4.pop(i)：删除并返回列表中索引i处的元素
@@ -82,7 +119,8 @@ if __name__ =='__main__':
     # 8.clear()：清空列表
     my_list.clear()
     print(my_list)  # 输出[]
-    print('------------------------------------')
+
     test_tuple()
 
+    test_slice()
 
