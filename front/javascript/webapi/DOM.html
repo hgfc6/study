@@ -146,11 +146,36 @@
 <br>
 <div>
     常用事件类型<br>
-    鼠标事件：click, dblclick, mouseover, mouseout, mousedown, mouseup 等。<br>
-    键盘事件：keydown, keyup, keypress 等。<br>
-    表单事件：submit, change, focus, blur 等。<br>
-    窗口事件：load, resize, scroll 等。<br>
-    通过事件监听，开发者可以灵活地处理用户交互，实现丰富的网页功能。
+    🖱️ 鼠标事件<br><br>
+
+    click：鼠标单击（左键点击后抬起）<br>
+    dblclick：鼠标双击（快速连续两次点击）<br>
+    mouseover：鼠标指针移入元素区域<br>
+    mouseout：鼠标指针移出元素区域<br>
+    mousedown：鼠标按键按下（无需抬起）<br>
+    mouseup：鼠标按键释放<br><br>
+    ⌨️ 键盘事件<br><br>
+
+    keydown：键盘按键被按下（任何键都会触发）<br>
+    keyup：键盘按键被释放<br>
+    keypress：字符键被按下（主要针对可打印字符）<br><br>
+    📝 表单事件<br><br>
+
+    submit：表单提交时触发<br>
+    change：表单元素值改变且失去焦点后触发（如输入框）<br>
+    focus：元素获得焦点（如点击输入框）<br>
+    blur：元素失去焦点（如点击其他区域）<br><br>
+    🖼️ 窗口事件<br><br>
+
+    load：页面及所有资源加载完成时触发<br>
+    resize：浏览器窗口大小改变时触发<br>
+    scroll：页面或元素发生滚动时触发<br><br>
+    使用技巧：<br><br>
+
+    事件传播：注意事件冒泡（bubble）和捕获（capture）阶段<br>
+    性能优化：高频事件（如scroll/resize）建议使用节流（throttle）<br>
+    兼容性：移动端建议使用 touch 事件替代部分鼠标事件<br>
+    弃用注意：keypress 事件已被现代标准废弃，推荐使用 keydown 代替<br>
 </div>
 </body>
 </html>
