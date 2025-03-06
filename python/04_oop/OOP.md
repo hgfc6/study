@@ -74,3 +74,12 @@ print(my_dog.speak())  # 输出: Buddy says Woof
 print(my_cat.speak())  # 输出: Whiskers says Meow
 ```
 这些概念是Python面向对象编程的基础
+
+## [访问限制](001_access%20_restrictions.py)
+## [继承](002_oop_extends.py)
+## [获取对象信息](003_get_object_info.py)
+
+## 高级特性
+### [__slots__](./advanced_features/001_slots.py)
+### [@property](./advanced_features/002_property.py)
+### [多重继承](./advanced_features/003_multi_extends.py)
