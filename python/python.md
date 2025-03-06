@@ -1,3 +1,4 @@
+[**示例代码和输出都是根据 Python 3.13.1**]()
 #### 一、Python 必学内容
 1. **基础语法**
     - [变量与数据类型](./01_basic/001_data_types_and_variables.py)（整数、浮点数、[字符串](./01_basic/002_String_encoding.py)、布尔值等）
@@ -11,13 +12,13 @@
     - [集合](./01_basic/006_dict_and_set.py)（`set`）：去重、集合运算
 3. **函数**
     - [定义与调用函数](./02_function/001_function_parameter.py)
-    - [参数传递]((./02_function/001_function_parameter.py))（位置参数、关键字参数、默认参数）
+    - [参数传递](./02_function/001_function_parameter.py)（位置参数、关键字参数、默认参数）
     - 返回值与作用域
     - 匿名函数（`lambda`）
 4. **文件操作**
     - 文件读写（`open()`、`read()`、`write()`）
     - 上下文管理器（`with` 语句）
-5. **面向对象编程（OOP）**
+5. **[面向对象编程（OOP）](./04_oop/OOP.md)**
     - 类与对象
     - 构造函数（`__init__`）
     - 继承与多态
@@ -41,7 +42,7 @@
     - 堆（`heapq`）
     - 队列（`queue`）
     - 链表、栈等自定义数据结构
-2. **函数式编程**
+2. **[函数式编程](./02_function/002_functional_programming.py)**
     - `map()`、`filter()`、`reduce()`
     - 装饰器（`@decorator`）
 3. **并发与并行**
