@@ -1,4 +1,6 @@
 [**示例代码和输出都是根据 Python 3.13.1**]()
+
+[学习内容参考出处](https://liaoxuefeng.com/books/python/introduction/index.html)
 #### 一、Python 必学内容
 1. **基础语法**
     - [变量与数据类型](./01_basic/001_data_types_and_variables.py)（整数、浮点数、[字符串](./01_basic/002_String_encoding.py)、布尔值等）
@@ -15,7 +17,7 @@
     - [参数传递](./02_function/001_function_parameter.py)（位置参数、关键字参数、默认参数）
     - 返回值与作用域
     - 匿名函数（`lambda`）
-4. **文件操作**
+4. **[文件操作](./06_io/io.md)**
     - 文件读写（`open()`、`read()`、`write()`）
     - 上下文管理器（`with` 语句）
 5. **[面向对象编程（OOP）](./04_oop/OOP.md)**
@@ -27,7 +29,7 @@
     - 导入模块（`import`）
     - 常用标准库（如 `os`、`sys`、`math`、`datetime`）
     - 创建与使用自定义模块
-7. **错误与异常处理**
+7. [**错误与异常处理**](./05_error_debug_test/error_debug_test.md)
     - `try-except-finally` 结构
     - 自定义异常
 8. **常用工具**
