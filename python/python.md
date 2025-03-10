@@ -25,7 +25,7 @@
     - 构造函数（`__init__`）
     - 继承与多态
     - 封装与私有属性
-6. **模块与包**
+6. **[模块与包](./08_module/module.md)**
     - 导入模块（`import`）
     - 常用标准库（如 `os`、`sys`、`math`、`datetime`）
     - 创建与使用自定义模块
@@ -47,7 +47,7 @@
 2. **[函数式编程](./02_function/002_functional_programming.py)**
     - `map()`、`filter()`、`reduce()`
     - 装饰器（`@decorator`）
-3. **并发与并行**
+3. **[并发与并行](./07_process_thread/ProcessAndThread.md)**
     - 多线程（`threading`）
     - 多进程（`multiprocessing`）
     - 异步编程（`asyncio`）
