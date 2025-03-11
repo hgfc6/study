@@ -22,7 +22,7 @@ class MyClass:
         return f'{self._name} nb666'
     # __repr__ = __str__
 my_obj = MyClass("cjh")
-print(my_obj) # 输出nb666
+print(my_obj) # 输出cjh nb666
 
 # __iter__()：
 # 如果一个类想被用于for ... in循环，类似list或tuple那样，就必须实现一个__iter__()方法，该方法返回一个迭代对象

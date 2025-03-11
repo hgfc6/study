@@ -33,6 +33,7 @@ if __name__ == '__main__':
         print('key not found')  # 输出提示信息
 
     # 也可以通过dict提供的get方法，如果key不存在，则返回None或自己指定的value：
+    print(my_dict.get("gap") is None) # True
     print(my_dict.get('grape'))  # None 注意：返回None的时候Python的交互环境不显示结果。
     print(my_dict.get('grape', 4))  # 4
 
@@ -53,6 +54,7 @@ if __name__ == '__main__':
     # del和dict.pop()都可以删除一个key-value对，但是返回值不同。
     # del不返回值, 更通用 除了字典，还可以用于删除列表中的元素、模块中的属性等
     # dict.pop()返回被删除的值。二者删除不存在的key都会报错，但是pop可以用第二个参数指定不存在时的返回值。
+    print(my_dict.pop("banana", "========"))
 
     # 遍历字典
     # 请务必注意，dict内部存放的顺序和key放入的顺序是没有关系的。
