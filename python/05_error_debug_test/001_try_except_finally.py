@@ -42,6 +42,20 @@ except TypeError as e:
 # raise语句如果不带参数，就会把当前错误原样抛出。此外，在except中raise一个Error，还可以把一种类型的错误转化成另一种类型
 
 
+# ----------raise ... from exception
+# 在Python中，raise ... from ... 语法用于在引发异常时指定一个新的异常，并且可以保留原来的异常上下文信息。
+# 这是一种更清晰地处理异常的方式，特别适用于在捕获一个异常后需要引发另一个异常的情况。
+# 例如：
+# try:
+#     1 / 0
+# except ZeroDivisionError as e:
+#     raise ValueError("除零错误") from e
+
+# 在这个例子中，当捕获到 ZeroDivisionError 异常后，代码引发了 ValueError 异常。
+# from e 指定了新异常的原因，使得在异常信息中可以看到原始异常的详细信息，从而更容易进行调试和错误跟踪。
+# 需要注意的是，如果不想在新异常中包含原始异常的信息，可以使用 raise ... from None 来抑制原始异常的上下文信息。
+
+
 # 自定义异常
 # 只有在必要的时候才定义我们自己的错误类型。
 # 如果可以选择Python已有的内置的错误类型（比如ValueError，TypeError），尽量使用Python内置的错误类型。
