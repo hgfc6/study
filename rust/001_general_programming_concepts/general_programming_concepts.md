@@ -70,7 +70,62 @@ let a = [3; 5]
 ```
 
 ## 函数
+```rust
+//定义
+fn 函数名(参数一:参数一类型, 参数二:参数二类型) -> 返回值类型 {
+    // 使用return可以提前返回结果，如果是最后一行就是返回结果，可以省略return, 这时最后一行不能带分号
+}
+//两数相加
+fn add(n1:i32, n2:i32) -> i32 {
+    n1 + n2
+}
+```
 
 ## 注释
-
+`//`单行注释
+`///`文档注释，支持markdown语法
 ## 控制流
+
+**if else if else**
+```rust
+if condition1 {
+
+} else if condition2 {
+
+} else {
+
+}
+//或者将if else 返回值赋值给一个变量
+let condition = true
+let num = if condition {5} else {6}
+println!("{}", num)//5
+//但是这样就不对
+let num = if condition {5} else {"6"}// error[E0308]: `if` and `else` have incompatible types
+// 因为变量必须只有一个类型。Rust 需要在编译时就确切地知道 num 变量的类型
+// 若 num 的类型仅在运行时确定，则 Rust 将无法做到这一点；而且若编译器必须跟踪任意变量的多种假设类型，则编译器会变得更复杂，并且对代码的保证也会减少。
+```
+
+**loop**，**while**，**for**
+```rust
+//loop{}=while true {}
+//loop还可以配合循环标签跳转到指定位置
+'t1: loop {
+    loop {
+        break 't1;
+    }
+}
+// break还可以返回循环的值
+let mut n = 0
+let num = loop {
+    n+=1
+    if n > 10 {
+        break n * 2;
+    }
+}
+println!("{}", num); // 22
+
+let arr = [1, 2, 3]
+for ele in arr {
+    println!("{}", ele);
+}
+```
