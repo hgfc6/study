@@ -1,3 +1,4 @@
 .idea
 .git
 ./front/vue/node_modules/
+*/target/
