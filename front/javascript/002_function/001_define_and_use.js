@@ -40,5 +40,7 @@ function pp3() {
         var a = 2;
         console.log(a);//2
     }
+    pp4()
     console.log(a);//0
 }
+pp3()

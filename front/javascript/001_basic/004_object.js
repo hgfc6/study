@@ -12,8 +12,8 @@ let xiaohong = {
     name: '小红',
     'middle-school': 'No.1 Middle School'
 };
-// 然后用.['']访问
-xiaohong['middle-school'];
+// 然后用[""]访问
+console.log(xiaohong["middle-school"]);
 
 //访问不存在的属性返回undefined
 // 判断对象有没有属性，使用in

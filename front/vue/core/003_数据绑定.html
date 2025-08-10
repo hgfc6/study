@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数据绑定</title>
+    <script type="text/javascript" src="../js2/vue.js"></script>
+</head>
+<body>
+<div id="dan">
+    <h1>单向数据绑定，数据只能从data流向页面</h1>
+    <input type="text" v-bind:value="name">
+
+    <h1>双向数据绑定：data和页面互相影响</h1>
+    <input type="text" v-model:value="name">
+    <!--    v-model:只能用在表单类元素身上（输入类元素/有value属性）-->
+    <!--    v-model:简写v-model=""-->
+</div>
+<script type="text/javascript">
+    const v = new Vue({
+        el: '#dan',
+        data: {
+            name: 'cjh'
+        }
+    })
+    //     el的两种写法1 el:'dan' 2 v.$mount("#dan")
+    //     data的两种写法：对象式（上例）data:{} , 函数式 data: function(){}/data(){}
+    //     注意：由vue管理的函数，不要写成箭头函数，否则函数this代表的将是window对象
+</script>
+</body>
+</html>

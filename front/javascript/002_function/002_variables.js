@@ -1,7 +1,7 @@
 // 》》》》》变量作用域
 // >>>>>变量提升 js会把var声明的变量提升到函数顶部
 function pp4() {
-    var x = "hello" + y;
+    var x = "hello " + y;
     console.log(x);
     var y = "Bob";
 }
@@ -11,8 +11,8 @@ pp4();// hello undefined 虽然y没有报错(js提升了y的声明)，但是js�
 
 // >>>>>>全局作用域
 // 没有在任何函数体内声明的变量(不止变量，还有函数、对象...)作用域是全局
-// js默认有个全局对象window
-window.pp4();
+// js默认有个全局对象window(执行环境是浏览器才有window对象，如果是Node.JS环境，全局对象是global)
+// window.pp4();
 // 任何作用域都会从当前作用域寻找，找不到就会向上寻找，直到window，如果还没找到就会报错ReferenceError
 
 // >>>>>>名字空间

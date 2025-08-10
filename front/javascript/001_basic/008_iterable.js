@@ -11,7 +11,8 @@
 // }
 // for ... in循环将把name包括在内，但Array的length属性却不包括在内。
 // for ... of循环则完全修复了这些问题，它只循环集合本身的元素
-for (let x of [1, 2, 3]) {
+for (let x of [1, "2", true]) {
+    console.log(x)
 }
 
 // 更好的方式是直接使用iterable内置的forEach【ES5.1支持】方法，它接收一个函数，每次迭代就自动回调该函数。以Array为例：

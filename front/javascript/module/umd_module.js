@@ -3,7 +3,7 @@
 //
 // 定义UMD模块：
 //
-// // myModule.js
+// // myModule.js2
 // (function (root, factory) {
 //     if (typeof define === 'function' && define.amd) {
 //         // AMD
@@ -27,11 +27,11 @@
 // 导入UMD模块：
 //
 // 在Node.js中：
-// const myModule = require('./myModule.js');
+// const myModule = require('./myModule.js2');
 // myModule();
 //
 // 在浏览器中：
-// <script src='./myModule.js'></script>
+// <script src='./myModule.js2'></script>
 // <script>
 //     myModule();
 // </script>

@@ -193,7 +193,7 @@ console.log(theme); // 'dark'
   "scripts": {
     "start": "webpack serve --mode development",
     "build": "webpack --mode production",
-    "lint": "eslint src/**/*.js"
+    "lint": "eslint src/**/*.js2"
   }
 }
 ```
@@ -201,9 +201,9 @@ console.log(theme); // 'dark'
 #### **Webpack 基础配置（webpack.config.js）**
 ```javascript
 module.exports = {
-  entry: './src/index.js',
+  entry: './src/index.js2',
   output: {
-    filename: 'bundle.js',
+    filename: 'bundle.js2',
     path: path.resolve(__dirname, 'dist'),
   },
   module: {
@@ -338,12 +338,12 @@ console.log(user.name); // 'Alice'
 
 #### **Jest 单元测试**
 ```javascript
-// sum.js
+// sum.js2
 function sum(a, b) {
   return a + b;
 }
 
-// sum.test.js
+// sum.test.js2
 test('adds 1 + 2 to equal 3', () => {
   expect(sum(1, 2)).toBe(3);
 });

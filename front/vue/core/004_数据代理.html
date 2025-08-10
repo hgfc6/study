@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>回顾Object.defineProperty方法</title>
+    <script type="text/javascript" src="../js2/vue.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+    let num = 18
+    let person = {
+        name: "张三",
+        sex: "男"
+    }
+    Object.defineProperty(person, "age", {
+        value: 18,
+        //enumerable: true//控制属性是否可以被枚举默认值false
+        //writable: true//控制属性是否可以被修改，默认false
+        //configurable:true//控制属性是否可以被删除
+
+        // get: function () {//读取age属性时get函数会被调用
+        //     return num
+        // },
+        // set(value) {//修改age属性时set函数会被调用
+        //     console.log("修改age值", value)
+        //     num = value
+        // }
+    })//通过这种方式添加的属性不能通过对象枚举/遍历
+    console.log(person)
+</script>
+
+<!--数据代理：通过一个对象代理对另一个对象中属性的操作（读/写）-->
+
+<script type="text/javascript">
+    // 最简单的数据代理
+    let obj = {x: 10}
+    let obj2 = {y: 10}
+
+    Object.defineProperty(obj2, "x", {
+        get() {
+            return obj.x
+        },
+        set(value) {
+            obj.x = value
+        }
+    })
+    console.log(obj)
+</script>
+
+
+<!--vue定义中的data:{}就是vm._data属性，采用了代理方式-->
+<div id="root2">
+    <input type="text" v-model="name">
+    <input type="text" v-model="age">
+</div>
+<script type="text/javascript">
+    let data = {
+        name: "zs",
+        age: 12
+    }
+    const vm = new Vue({
+        el: "#root2",
+        data: data
+    })
+</script>
+
+</body>
+</html>

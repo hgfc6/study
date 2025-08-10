@@ -12,7 +12,7 @@ var html = template.Must(template.New("https").Parse(`
 <html>
 <head>
   <title>Https Test</title>
-  <script src="/assets/app.js"></script>
+  <script src="/assets/app.js2"></script>
 </head>
 <body>
   <h1 style="color:red;">Welcome, Ginner!</h1>
@@ -27,7 +27,7 @@ func TestHttp2Server(t *testing.T) {
 	r.GET("/", func(c *gin.Context) {
 		if pusher := c.Writer.Pusher(); pusher != nil {
 			// 使用 pusher.Push() 做服务器推送
-			if err := pusher.Push("/assets/app.js", nil); err != nil {
+			if err := pusher.Push("/assets/app.js2", nil); err != nil {
 				log.Printf("Failed to push: %v", err)
 			}
 		}

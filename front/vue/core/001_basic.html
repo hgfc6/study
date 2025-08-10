@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>初识vue</title>
+    <script type="text/javascript" src="../js2/vue.js"></script>
+</head>
+<body>
+<!--容器-->
+<div id="root">
+    <h1>Hello {{ name }}!, {{ Date.now() }}</h1>
+    <!--  {{}} 中写一个js表达式 -->
+</div>
+<script type="text/javascript">
+    Vue.config.productionTip = false//阻止vue在启动时产生提示
+
+    // 创建vue实例。容器和vue实例一一对应
+    new Vue({
+        el: "#root",//el 选择容器，值通常为css选择器字符串
+        // el: document.getElementById("root"),
+        data: { // data指定数据，供el选择的容器使用
+            name: navigator.userAgent.split('/')[0]
+        }
+    })
+</script>
+
+</body>
+</html>
