@@ -1,7 +1,6 @@
 package _package
 
 import (
-	. "github.com/HuiJing-C/GolangLearning/cjh/06package/pack" // cjh前的内容为go.mod的module名
 	"testing"
 )
 

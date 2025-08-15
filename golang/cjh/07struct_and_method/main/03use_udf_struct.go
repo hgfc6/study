@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	s "github.com/HuiJing-C/GolangLearning/cjh/07struct_and_method"
+	s "golang/cjh/07struct_and_method"
 )
 
 func main() {
