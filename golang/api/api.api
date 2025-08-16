@@ -8,8 +8,8 @@ type Response {
 	Message string `json:"message"`
 }
 
-service zero-api {
-	@handler ZeroHandler
+service api-api {
+	@handler ApiHandler
 	get /from/:name (Request) returns (Response)
 }
 

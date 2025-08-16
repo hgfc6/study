@@ -4,15 +4,15 @@ import (
 	"flag"
 	"fmt"
 
-	"golang/zero/internal/config"
-	"golang/zero/internal/handler"
-	"golang/zero/internal/svc"
+	"golang/api/internal/config"
+	"golang/api/internal/handler"
+	"golang/api/internal/svc"
 
 	"github.com/zeromicro/go-zero/core/conf"
 	"github.com/zeromicro/go-zero/rest"
 )
 
-var configFile = flag.String("f", "D:\\Apps\\JetBrains\\project\\study\\golang\\zero\\etc\\zero-api.yaml", "the config file")
+var configFile = flag.String("f", "api/etc/api-api.yaml", "the config file")
 
 func main() {
 	flag.Parse()

@@ -4,12 +4,12 @@ import (
 	"net/http"
 
 	"github.com/zeromicro/go-zero/rest/httpx"
-	"golang/zero/internal/logic"
-	"golang/zero/internal/svc"
-	"golang/zero/internal/types"
+	"golang/api/internal/logic"
+	"golang/api/internal/svc"
+	"golang/api/internal/types"
 )
 
-func ZeroHandler(svcCtx *svc.ServiceContext) http.HandlerFunc {
+func ApiHandler(svcCtx *svc.ServiceContext) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		var req types.Request
 		if err := httpx.Parse(r, &req); err != nil {
@@ -17,8 +17,8 @@ func ZeroHandler(svcCtx *svc.ServiceContext) http.HandlerFunc {
 			return
 		}
 
-		l := logic.NewZeroLogic(r.Context(), svcCtx)
-		resp, err := l.Zero(&req)
+		l := logic.NewApiLogic(r.Context(), svcCtx)
+		resp, err := l.Api(&req)
 		if err != nil {
 			httpx.ErrorCtx(r.Context(), w, err)
 		} else {
