@@ -1,0 +1,95 @@
+//goctl rpc protoc userrpc.proto --go_out=./pb --go-grpc_out=./pb --zrpc_out=.
+syntax = "proto3";
+
+package test_grpc;
+
+option go_package = "./test_go_zero";
+
+// 用户信息
+message User {
+  int64 id = 1;
+  string name = 2;
+  string password = 3;
+  string mobile = 4;
+  string gender = 5;
+  string nickname = 6;
+  int64 type = 7;
+  int64 create_at = 8;
+  int64 update_at = 9;
+}
+
+// 添加用户请求
+message AddUserReq {
+  string name = 1;
+  string password = 2;
+  string mobile = 3;
+  string gender = 4;
+  string nickname = 5;
+  int64 type = 6;
+}
+
+// 添加用户响应
+message AddUserResp {
+  int64 id = 1;
+}
+
+// 用户查询请求
+message UserReq {
+  int64 id = 1;
+}
+
+// 用户查询响应
+message UserResp {
+  User user = 1;
+}
+
+// 按手机号查询请求
+message MobileReq {
+  string mobile = 1;
+}
+
+// 按用户名查询请求
+message NameReq {
+  string name = 1;
+}
+
+// 更新用户请求
+message UpdateUserReq {
+  int64 id = 1;
+  string name = 2;
+  string password = 3;
+  optional string mobile = 4;
+  optional string gender = 5;
+  optional string nickname = 6;
+  optional int64 type = 7;
+}
+
+// 更新用户响应
+message UpdateResp {
+  bool success = 1;
+}
+
+// 删除用户响应
+message DelResp {
+  bool success = 1;
+}
+
+service Userrpc {
+  // 添加用户
+  rpc AddUser(AddUserReq) returns (AddUserResp);
+
+  // 按ID查询用户
+  rpc GetUser(UserReq) returns (UserResp);
+
+  // 按手机号查询
+  rpc GetUserByMobile(MobileReq) returns (UserResp);
+
+  // 按用户名查询
+  rpc GetUserByName(NameReq) returns (UserResp);
+
+  // 更新用户
+  rpc UpdateUser(UpdateUserReq) returns (UpdateResp);
+
+  // 删除用户
+  rpc DelUser(UserReq) returns (DelResp);
+}

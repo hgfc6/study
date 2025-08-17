@@ -1,0 +1,38 @@
+//goctl api go --api .\user.api --dir ./api
+syntax = "v1"
+
+type User {
+	Id       int64  `json:"id,omitempty"`
+	Name     string `json:"name,omitempty"`
+	Password string `json:"password,omitempty"`
+	Mobile   string `json:"mobile,omitempty"`
+	Gender   string `json:"gender,omitempty"`
+	Nickname string `json:"nickname,omitempty"`
+	Type     int64  `json:"type,omitempty"`
+	CreateAt int64  `json:"createAt,omitempty"`
+	UpdateAt int64  `json:"updateAt,omitempty"`
+}
+
+type IDRequest {
+	Id int64 `path:"id"`
+}
+
+type Response {
+	Code int64  `json:"code,omitempty"`
+	Msg  string `json:"msg,omitempty"`
+}
+
+service user-api {
+	// GET /user 路由
+	@handler getUser
+	get /user/:id (IDRequest) returns (User)
+
+	// POST /user 路由
+	@handler createUser
+	post /user (User) returns (Response)
+
+	// DELETE /user/{id} 路由
+	@handler deleteUser
+	delete /user/:id (IDRequest) returns (Response) // 参数使用冒号(:)声明
+}
+
