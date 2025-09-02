@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>模板语法</title>
+    <script type="text/javascript" src="../js2/vue.js"></script>
+</head>
+<body>
+<div id="root">
+    <h1>插值语法：常用于解析标签体内容</h1>
+    <p>{{ name }}</p>
+    <hr/>
+    <h1>指令语法：常用于解析标签(属性、标签体内容、绑定事件......)</h1>
+    <a v-bind:href="url">点击搜索</a>
+    <!--    <a v-bind:href="url">点击搜索</a>-->
+    <!--    v-bind:可以简写为:-->
+</div>
+
+<script type="text/javascript">
+    new Vue({
+        el: '#root',
+        data: {
+            name: 'tom',
+            url: "https://cn.bing.com/?mkt=zh-CN"
+        },
+        // data() { // data 函数式写法
+        //     return {
+        //         name: 'tom',
+        //         url: "https://cn.bing.com/?mkt=zh-CN"
+        //     }
+        // }
+    })
+</script>
+
+<!--
+    data与el的2种写法
+            1.el有2种写法
+                            (1).new Vue时候配置el属性。
+                            (2).先创建Vue实例，随后再通过vm.$mount('#root')指定el的值。
+            2.data有2种写法
+                            (1).对象式
+                            (2).函数式
+                            如何选择：目前哪种写法都可以，以后学习到组件时，data必须使用函数式（普通函数，不要写箭头函数），否则会报错。
+            3.一个重要的原则：
+                            由Vue管理的函数，一定不要写箭头函数，一旦写了箭头函数，this就不再是Vue实例了。
+-->
+
+
+</body>
+</html>
