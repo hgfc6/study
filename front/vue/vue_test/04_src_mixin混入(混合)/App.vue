@@ -1,12 +1,15 @@
 <template>
   <div>
-    <h1>{{ name }}</h1>
-    <School></School>
+    <h1>{{ name }}</h1><hr>
+    <School></School><hr>
+    <Student></Student>
   </div>
 </template>
 
 <script>
 import School from './components/School.vue'
+import Student from './components/Student.vue'
+
 export default {
   name: 'App',
   data() {
@@ -14,6 +17,9 @@ export default {
       name: 'Vue!'
     }
   },
-  components: {School}
+  components: {
+    School,
+    Student
+  }
 }
 </script>

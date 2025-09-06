@@ -1,6 +1,7 @@
 <template>
   <div>
     <h1>{{ name }}</h1><hr>
+    <h1>{{ x }}</h1><hr>
     <School></School>
   </div>
 </template>
