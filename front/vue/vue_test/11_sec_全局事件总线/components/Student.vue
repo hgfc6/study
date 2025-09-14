@@ -2,6 +2,7 @@
   <div>
     <h2>{{ name }}</h2>
     <h2>{{ age }}</h2>
+    <button @click="sendStuName">把学生名字交给学校</button>
   </div>
 </template>
 
@@ -12,6 +13,11 @@ export default {
     return {
       name: '张三',
       age: 18
+    }
+  },
+  methods: {
+    sendStuName() {
+      this.$bus.$emit('showStuName', this.name)
     }
   }
 }
