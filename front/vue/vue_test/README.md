@@ -325,6 +325,7 @@ Vue.mixin({
     3. 备注：若有多个元素需要过度，则需要使用：```<transition-group>```，且每个元素都要指定```key```值。
 
 ## vue脚手架配置代理
+<img src="../pic/devproxy.png" style="width:40%" />
 
 ### 方法一
 
@@ -378,7 +379,7 @@ module.exports = {
 ## 插槽
 
 1. 作用：让父组件可以向子组件指定位置插入html结构，也是一种组件间通信的方式，适用于 <strong style="color:red">父组件 ===> 子组件</strong> 。
-
+`结构样式的解析是在父组件中进行的，子组件只负责展示。父组件也可以不写样式，样式由子组件提供。`
 2. 分类：默认插槽、具名插槽、作用域插槽
 
 3. 使用方式：
@@ -404,11 +405,11 @@ module.exports = {
        ```vue
        父组件中：
                <Category>
-                   <template slot="center">
+                   <template slot="center"><!--第一种slot写法-->
                      <div>html结构1</div>
                    </template>
        
-                   <template v-slot:footer>
+                   <template v-slot:footer><!--第二种slot写法，只能用在template标签上-->
                       <div>html结构2</div>
                    </template>
                </Category>
@@ -431,7 +432,7 @@ module.exports = {
            ```vue
            父组件中：
                    <Category>
-                       <template scope="scopeData">
+                       <template scope="scopeData"><!--必须要用template标签包裹，且必须有scope属性，名字可以随意-->
                            <!-- 生成的是ul列表 -->
                            <ul>
                                <li v-for="g in scopeData.games" :key="g">{{g}}</li>
@@ -448,7 +449,7 @@ module.exports = {
            子组件中：
                    <template>
                        <div>
-                           <slot :games="games"></slot>
+                           <slot :games="games"></slot><!--给插槽的使用者传递数据-->
                        </div>
                    </template>
                    
@@ -465,9 +466,7 @@ module.exports = {
                        }
                    </script>
            ```
-   ```
-   
-   ```
+
 
 ## Vuex
 
