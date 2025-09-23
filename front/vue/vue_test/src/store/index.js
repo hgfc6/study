@@ -37,13 +37,19 @@ const mutations = {
     JIAN(state, value) {
         console.log('mutations中的JIAN被调用了')
         state.sum -= value
+    },
+    ADD_PERSON(state, value) {
+        state.personList.unshift(value)
     }
 }
 //准备state——用于存储数据
 const state = {
     sum: 0, //当前的和
     school: 'QH',
-    subject: 'front'
+    subject: 'front',
+    personList: [
+        {id:'001',name:'张三'}
+    ]
 }
 //准备getters——用于处理state中的数据
 const getters = {

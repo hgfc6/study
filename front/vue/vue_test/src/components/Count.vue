@@ -4,6 +4,8 @@
     <h2>当前和乘10为：{{ $store.getters.bigSum }}</h2>
     <h2>当前和乘10为：{{ bigSum }}</h2><!--借助mapGetter实现-->
     <h2>我来自{{ school }}，在学习{{ subject }}</h2><!--借助mapState实现-->
+
+    <h2 style="color: red">下方组件人数：{{ personList.length }}</h2>
     <select v-model.number="n">
       <option value="1">1</option>
       <option value="2">2</option>
@@ -46,17 +48,17 @@ export default {
       this.$store.dispatch('jiaWait', this.n)
     },
     //靠mapMutations生成：mapIncrement、mapDecrement（对象形式）
-    ...mapMutations({mapIncrement:'JIA',mapDecrement:'JIAN'}),//k:v > 方法名：mutations中的方法名
+    ...mapMutations({mapIncrement: 'JIA', mapDecrement: 'JIAN'}),//k:v > 方法名：mutations中的方法名
     //...mapMutations(['JIA','JIAN']),//（数组形式）方法名相同才能用
 
     //靠mapActions生成：mapIncrementOdd、mapIncrementWait（对象形式）
-    ...mapActions({mapIncrementOdd:'jiaOdd',mapIncrementWait:'jiaWait'})
+    ...mapActions({mapIncrementOdd: 'jiaOdd', mapIncrementWait: 'jiaWait'})
     //...mapActions(['jiaOdd','jiaWait'])//（数组形式）方法名相同才能用
   },
   computed: {
     //借助mapState生成计算属性，从state中读取数据
     // ...mapState({school: 'school', subject: 'subject'}),//对象写法
-    ...mapState(['school', 'subject']),//数组写法
+    ...mapState(['school', 'subject', 'personList']),//数组写法
     ...mapGetters({bigSum: 'bigSum'}),//对象写法
     //...mapGetters({bigSum: 'bigSum'}),//数组写法
   }

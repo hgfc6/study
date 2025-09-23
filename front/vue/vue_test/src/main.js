@@ -10,7 +10,7 @@ Vue.config.productionTip = false
 
 //创建vm
 new Vue({
-	el:'#app',
-	render: h => h(App),
-	store
+    el: '#app',
+    render: h => h(App),
+    store
 })
