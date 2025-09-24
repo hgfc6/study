@@ -691,7 +691,7 @@ module.exports = {
 
    ```js
    //方式一：自己直接读取
-   this.$store.getters['personAbout/firstPersonName']
+   this.$store.getters['personAbout/firstPersonName']//js读属性写法：1、对象.属性名 2、对象[属性名]
    //方式二：借助mapGetters读取：
    ...mapGetters('countAbout',['bigSum'])
    ```
