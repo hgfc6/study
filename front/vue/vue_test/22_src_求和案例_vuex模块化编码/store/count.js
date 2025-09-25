@@ -27,8 +27,8 @@ export default {
 	},
 	state:{
 		sum:0, //当前的和
-		school:'尚硅谷',
-		subject:'前端',
+		school:'QH',
+		subject:'front',
 	},
 	getters:{
 		bigSum(state){
