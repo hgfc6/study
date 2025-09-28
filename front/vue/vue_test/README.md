@@ -947,14 +947,15 @@ module.exports = {
 	//第一种写法：props值为对象，该对象中所有的key-value的组合最终都会通过props传给Detail组件
 	// props:{a:900}
 
-	//第二种写法：props值为布尔值，布尔值为true，则把路由收到的所有params参数通过props传给Detail组件
+	//第二种写法：props值为布尔值，布尔值为true，则把路由收到的所有params参数通过props传给Detail组件。注意只对params参数有效
 	// props:true
+        // 在Detail组件中使用props:['id']接收参数，然后在组标签中使用：{{id}}即可
 	
 	//第三种写法：props值为函数，该函数返回的对象中每一组key-value都会通过props传给Detail组件
-	props(route){
+	props($route){
 		return {
-			id:route.query.id,
-			title:route.query.title
+			id:$route.query.id,
+			title:$route.query.title
 		}
 	}
 }
