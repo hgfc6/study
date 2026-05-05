@@ -1,4 +1,24 @@
 # 使用指南
+
+## 当前示例目录
+
+| 目录 | 说明 | 运行方式 |
+| --- | --- | --- |
+| [HelloWorld](./HelloWorld/) | Django 最小项目示例，包含路由、视图和模板 | `python manage.py runserver` |
+
+运行示例：
+
+```shell
+cd HelloWorld
+python manage.py runserver
+```
+
+访问地址：
+
+```text
+http://127.0.0.1:8000/
+```
+
 ## 1. 安装
 ```
 pip install django

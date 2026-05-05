@@ -1,128 +1,143 @@
-[**示例代码和输出都是根据 Python 3.13.1**]()
+# Python 学习清单
 
-[学习内容参考出处](https://liaoxuefeng.com/books/python/introduction/index.html)
-#### 一、Python 必学内容
-1. **基础语法**
-    - [变量与数据类型](./01_basic/001_data_types_and_variables.py)（整数、浮点数、[字符串](./01_basic/002_String_encoding.py)、布尔值等）
-    - 运算符（算术、比较、逻辑、赋值等）
-    - 控制结构（[条件语句](./01_basic/004_if_else_and_match.py) `if-else`，[循环语句](./01_basic/005_for_and_while.py) `for`、`while`）
-    - 输入输出（`input()`、`print()`）
-2. **数据结构**
-    - [列表](./01_basic/003_list_and_tuple.py)（`list`）：增删改查、切片、列表推导式
-    - [元组](./01_basic/003_list_and_tuple.py)（`tuple`）：不可变序列
-    - [字典](./01_basic/006_dict_and_set.py)（`dict`）：键值对操作
-    - [集合](./01_basic/006_dict_and_set.py)（`set`）：去重、集合运算
-3. **函数**
-    - [定义与调用函数](./02_function/001_function_parameter.py)
-    - [参数传递](./02_function/001_function_parameter.py)（位置参数、关键字参数、默认参数）
-    - 返回值与作用域
-    - 匿名函数（`lambda`）
-4. **[文件操作](./06_io/io.md)**
-    - 文件读写（`open()`、`read()`、`write()`）
-    - [上下文管理器](./06_io/004_context_manage.py)（`with` 语句）
-5. **[面向对象编程（OOP）](./04_oop/OOP.md)**
-    - 类与对象
-    - 构造函数（`__init__`）
-    - 继承与多态
-    - 封装与私有属性
-6. **[模块与包](./08_module/module.md)**
-    - 导入模块（`import`）
-    - 常用标准库（如 `os`、`sys`、`math`、`datetime`）
-    - 创建与使用自定义模块
-7. [**错误与异常处理**](./05_error_debug_test/error_debug_test.md)
-    - `try-except-finally` 结构
-    - 自定义异常
-8. **常用工具**
-    - 列表推导式、字典推导式
-    - [生成器与迭代器](./03_advanced_features/002_generators.py)
-    - `enumerate()`、`zip()` 等内置函数
+当前目录以 Python 3 为主，内容覆盖基础语法、函数、面向对象、I/O、并发、网络、数据库和常见 Web 框架。
 
----
+参考学习路线：<https://liaoxuefeng.com/books/python/introduction/index.html>
 
-#### 二、Python 选学内容
-1. **高级数据结构**
-    - 堆（`heapq`）
-    - 队列（`queue`）
-    - 链表、栈等自定义数据结构
-2. **[函数式编程](./02_function/002_functional_programming.py)**
-    - `map()`、`filter()`、`reduce()`
-    - 装饰器（`@decorator`）
-3. **[并发与并行](./07_process_thread/ProcessAndThread.md)**
-    - 多线程（`threading`）
-    - 多进程（`multiprocessing`）
-    - 异步编程（`asyncio`）
-4. **数据库操作**
-    - SQLite、MySQL、PostgreSQL 等数据库连接与操作
-    - ORM 框架（如 `SQLAlchemy`）
-5. **网络编程**
-    - 基本网络通信（`socket`）
-    - HTTP 请求（`requests` 库）
-    - Web 框架（如 `Flask`、`Django`）
-6. **数据处理与分析**
-    - `NumPy`：数值计算
-    - `Pandas`：数据分析
-    - `Matplotlib`、`Seaborn`：数据可视化
-7. **机器学习与人工智能**
-    - `Scikit-learn`：机器学习库
-    - `TensorFlow`、`PyTorch`：深度学习框架
-    - `NLTK`、`spaCy`：自然语言处理
-8. **自动化与脚本**
-    - 自动化任务（`os`、`shutil`）
-    - 网络爬虫（`BeautifulSoup`、`Scrapy`）
-    - 自动化测试（`unittest`、`pytest`）
-9. **性能优化**
-    - 代码性能分析（`cProfile`）
-    - 代码优化技巧
-10. **部署与打包**
-    - 虚拟环境（`venv`、`conda`）
-    - 打包工具（`PyInstaller`、`setuptools`）
-    - 部署工具（`Docker`、`Kubernetes`）
+## 一、基础必学
 
----
+1. 基础语法
+   - [变量与数据类型](./01_basic/001_data_types_and_variables.py)
+   - [字符串与编码](./01_basic/002_String_encoding.py)
+   - [条件判断与 match](./01_basic/004_if_else_and_match.py)
+   - [循环语句](./01_basic/005_for_and_while.py)
+2. 常用数据结构
+   - [列表与元组](./01_basic/003_list_and_tuple.py)
+   - [字典与集合](./01_basic/006_dict_and_set.py)
+   - [可迭代对象](./01_basic/003_iterable.py)
+   - [解包、真假值、浅拷贝与深拷贝](./01_basic/007_unpacking_copy_truthiness.py)
+3. 函数
+   - [函数定义](./02_function/000_function_definition.py)
+   - [函数参数](./02_function/001_function_parameter.py)
+   - [函数式编程基础](./02_function/002_functional_programming.py)
+   - [闭包与装饰器](./02_function/003_closure_and_decorator.py)
+4. 高级特性
+   - [列表生成式](./03_advanced_features/001_list_generic.py)
+   - [生成器](./03_advanced_features/002_generators.py)
+   - [迭代器](./03_advanced_features/003_iterator.py)
+   - [类型标注、dataclass、TypedDict](./03_advanced_features/004_type_hint_dataclass.py)
+5. 面向对象
+   - [OOP 总览](./04_oop/OOP.md)
+   - [访问限制](./04_oop/001_access%20_restrictions.py)
+   - [继承与多态](./04_oop/002_oop_extends.py)
+   - [对象信息](./04_oop/003_get_object_info.py)
+   - [ABC 与 Protocol](./04_oop/advanced_features/007_abc_protocol.py)
+6. 错误处理与调试
+   - [异常处理](./05_error_debug_test/001_try_except_finally.py)
+   - [调试、断言、日志](./05_error_debug_test/002_debug_assert_logging_pdb.py)
+   - [单元测试](./05_error_debug_test/003_unit_test.py)
+   - [文档测试](./05_error_debug_test/004_doc_test.py)
+   - [pytest 基础](./05_error_debug_test/005_pytest_basic.py)
+7. 文件与 I/O
+   - [I/O 总览](./06_io/io.md)
+   - [文件读写](./06_io/001_file_read_write.py)
+   - [文件和目录操作](./06_io/002_opera_file_and_dir.py)
+   - [序列化](./06_io/003_serialization.py)
+   - [上下文管理器](./06_io/004_context_manage.py)
+8. 模块与包
+   - [模块与包](./08_module/module.md)
+   - [常用标准库示例](./08_module/001_common_stdlib_examples.py)
+   - [常用内置模块](./08_module/commonly_used_modules/commonly_used_built-in_modules.md)
+   - [常用第三方模块](./08_module/commonly_used_modules/commonly_used_third_party_%20modules.md)
 
-#### 三、学习建议
-1. **循序渐进**：先掌握基础语法，再逐步学习高级内容。
-2. **实践为主**：通过项目实战巩固知识。
-3. **查阅文档**：熟悉 Python 官方文档和常用库的文档。
-4. **参与社区**：加入 Python 社区，交流学习经验。
+## 二、进阶主题
 
-## Python基础学习后的练手建议
+1. 并发与并行
+   - [进程与线程总览](./07_process_thread/ProcessAndThread.md)
+   - [多进程](./07_process_thread/001_multi_process.py)
+   - [多线程](./07_process_thread/002_multi_thread.py)
+   - [ThreadLocal](./07_process_thread/003_thread_local.py)
+   - [分布式进程](./07_process_thread/004_distributed_processes.py)
+2. 网络编程
+   - [TCP](./09_web/001_tcp.py)
+   - [UDP](./09_web/02_udp.py)
+3. 数据库
+   - [SQLite](./10_connect_db/001_sqlite.py)
+   - [MySQL](./10_connect_db/002_mysql.py)
+   - [SQLAlchemy](./10_connect_db/003_sqlalchemy.py)
+4. 异步编程
+   - [协程](./11_async_io/001_coroutine.py)
+   - [asyncio 并发、超时、队列](./11_async_io/002_async_io.py)
+   - [aiohttp 异步 HTTP 服务](./11_async_io/003_async_http.py)
+5. Web 框架
+   - [框架总览](./framework/README.md)
+   - [Django](./framework/Django/README.md)
+   - [Flask](./framework/Flask/README.md)
+   - [FastAPI](./framework/FastAPI/README.md)
+6. 工程化基础
+   - [工程化基础总览](./12_project_engineering/README.md)
+   - [日志、配置、命令行参数](./12_project_engineering/001_logging_config_cli.py)
+   - [项目结构与依赖管理](./12_project_engineering/002_project_layout_and_dependencies.md)
+7. 综合练习
+   - [Todo CLI 练手项目](./practice/todo_cli/README.md)
 
-### 一、编程练习题
-1. **经典练习题**
-   - 完成100道Python基础练习题，涵盖变量、循环、函数等核心知识点[1]
-   - 例如：字符串处理、数值计算、列表操作等基础题目[1]
+## 三、当前还值得补充的知识点
 
-### 二、开源项目推荐
-1. **Web开发方向**
-   - Flask/Django框架的博客系统
-   - 电商网站后台开发（含用户管理、商品管理模块）
+1. 虚拟环境与依赖管理
+   - `venv`
+   - `pip`
+   - `requirements.txt`
+   - `pyproject.toml`
+2. 装饰器的更多实战案例
+3. 上下文管理器的底层协议
+   - `__enter__`
+   - `__exit__`
+4. 类型标注进阶
+   - `Protocol`
+   - 泛型
+   - 静态类型检查工具
+5. 测试体系
+   - `pytest`
+   - fixture
+   - mock
+6. 性能分析
+   - `timeit`
+   - `cProfile`
+7. 打包与发布
+   - wheel
+   - setuptools
+8. 常见工程化能力进阶
+   - 配置文件解析
+   - 分层项目目录
+   - 统一异常处理
+   - 自动化测试流水线
 
-2. **数据分析方向**
-   - 使用Pandas处理Excel/CSV数据
-   - 基于Matplotlib/Seaborn的数据可视化项目
+## 四、练手建议
 
-3. **自动化工具**
-   - 文件批量处理工具
-   - 网页数据爬虫（需遵守robots协议）
+1. 基础阶段
+   - 实现学生信息管理系统
+   - 实现命令行待办事项工具
+   - 做一组字符串、列表、字典小练习
+2. 进阶阶段
+   - 写一个文件批量处理脚本
+   - 写一个简单爬虫
+   - 用 SQLite 做一个小型 CRUD 程序
+   - 写一个 JSON 持久化的命令行 Todo 工具
+3. 框架阶段
+   - 用 Flask 做一个最小博客
+   - 用 Django 做一个后台管理 Demo
 
-### 三、开发环境准备
-1. 安装Python3.x + PyCharm/VSCode
-2. 配置Git版本控制[2]
-3. 建议使用virtualenv创建虚拟环境[2]
+## 五、建议学习顺序
 
-### 四、进阶学习路径
-1. **算法与数据结构**
-   - 实现常见排序算法（冒泡/快排）
-   - 链表/二叉树等数据结构实践
+1. 先把 `01_basic`、`02_function`、`03_advanced_features` 走通。
+2. 再补 `04_oop`、`05_error_debug_test`、`06_io`。
+3. 然后进入 `07_process_thread`、`09_web`、`10_connect_db`、`11_async_io`。
+4. 再学习 `12_project_engineering`，补日志、配置、CLI 等项目基础能力。
+5. 最后再看 `framework` 和更偏项目化的内容。
 
-2. **项目开发技巧**
-   - 学习使用requirements.txt管理依赖
-   - 掌握单元测试（unittest/pytest）[4]
+## 六、学习原则
 
-### 五、注意事项
-1. 从简单项目开始，逐步增加复杂度
-2. 每个项目确保有明确的需求文档[4]
-3. 推荐通过技术博客记录开发过程[4]
-
-
+1. 不要只看 `.md`，要同步运行 `.py` 示例。
+2. 每学完一个主题，最好自己重写一遍关键例子。
+3. 对“函数参数、闭包、装饰器、迭代器、协程”这些抽象点，要主动补小实验。
+4. 学框架前先把标准库和语言本身打牢，不然容易只会照着写。

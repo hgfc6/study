@@ -3,3 +3,8 @@
 ./front/vue/node_modules/
 */target/
 golang/vendor/
+__pycache__/
+*.pyc
+python/10_connect_db/study_sqlite.db
+python/10_connect_db/study_sqlalchemy.db
+python/practice/todo_cli/todos.json

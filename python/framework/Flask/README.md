@@ -6,6 +6,29 @@ Flask 基于 WSGI（Web Server Gateway Interface）和 Jinja2 模板引擎，旨
 pip install Flask # 安装
 pip show Flask # 查看 Flask 版本
 ```
+
+# 当前示例目录
+
+| 目录 | 说明 | 运行方式 |
+| --- | --- | --- |
+| [demo](./demo/) | 最小 Flask 应用，适合理解路由和视图函数 | `python demo/app.py` |
+| [online_app](./online_app/) | 带注册、登录、文档创建和数据库的综合示例 | `python run.py` |
+
+## online_app 运行准备
+
+```shell
+cd online_app
+pip install -r requirements.txt
+python run.py
+```
+
+`online_app` 里使用了这些扩展：
+
+1. `Flask-Login`：处理登录状态和 `current_user`。
+2. `Flask-SQLAlchemy`：通过 ORM 操作数据库。
+3. `Flask-WTF`：处理表单和 CSRF 校验。
+4. `WTForms`：定义表单字段和校验规则。
+
 # 基本概念
 
 ### 路由（Routing）
